@@ -1,0 +1,40 @@
+﻿<Window x:Class="TelerikBlueprint.MainWindow"
+                xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                xmlns:telerik="http://schemas.telerik.com/2008/xaml/presentation"
+                Title="Blueprint" Height="350" Width="525">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <StackPanel Orientation="Horizontal">
+                <telerik:RadMenuItem Header="File"/>
+                <telerik:RadMenuItem Header="Editor"/>
+                <telerik:RadMenuItem Header="View"/>
+                <telerik:RadMenuItem Header="Tools"/>
+        </StackPanel>
+        <telerik:RadDocking HasDocumentHost="True" HorizontalAlignment="Stretch" Margin="0,0,0,10" Grid.Row="1" VerticalAlignment="Stretch">
+            <telerik:RadSplitContainer x:Name="LeftContainer">
+                <telerik:RadPaneGroup x:Name="ComponentTaskGroup" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <telerik:RadPane Header="Component Explorer"/>
+                    <telerik:RadPane Header="Task View"/>
+                </telerik:RadPaneGroup>
+            </telerik:RadSplitContainer>
+
+            <telerik:RadSplitContainer x:Name="RightContainer" InitialPosition="DockedRight">
+                <telerik:RadPaneGroup x:Name="InspectorBlockbackGroup" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <telerik:RadPane Header="Inspector"/>
+                    <telerik:RadPane Header="Blockback"/>
+                </telerik:RadPaneGroup>
+            </telerik:RadSplitContainer>
+
+            <telerik:RadSplitContainer x:Name="BottomContainer" InitialPosition="DockedBottom">
+                <telerik:RadPaneGroup x:Name="OutputErrorListGroup" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+                    <telerik:RadPane Header="Output"/>
+                    <telerik:RadPane Header="Error List"/>
+                </telerik:RadPaneGroup>
+            </telerik:RadSplitContainer>
+        </telerik:RadDocking>
+    </Grid>
+</Window>
